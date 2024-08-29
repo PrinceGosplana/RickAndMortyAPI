@@ -5,14 +5,16 @@
 //  Created by Oleksandr Isaiev on 28.08.2024.
 //
 
+import Combine
 import SwiftUI
-//import Observation
-//
-//@Observable
+
+
 @MainActor
 final class CharactersViewModel: ObservableObject {
 
     @Published var characters: [Character] = []
+    var networkService = NetworkServiceCombine()
+    var subscriptions = Set<AnyCancellable>()
 
     func fetchCharacters() {
         guard let url = URL(string: "https://rickandmortyapi.com/api/character") else { return }
@@ -36,5 +38,16 @@ final class CharactersViewModel: ObservableObject {
                 print(error.localizedDescription)
             }
         }.resume()
+    }
+
+    func fetchCharactersWithCombine() {
+
+        characters.removeAll()
+        
+        NetworkServiceCombine.fetch()
+            .sink { [unowned self] item in
+                characters.append(contentsOf: item.results)
+            }
+            .store(in: &subscriptions)
     }
 }
