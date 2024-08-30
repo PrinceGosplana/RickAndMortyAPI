@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A2CCC082C7F00B500299CFD /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2CCC072C7F00B500299CFD /* CharactersViewModel.swift */; };
 		8A2CCC0A2C7F045800299CFD /* CharacterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2CCC092C7F045800299CFD /* CharacterRow.swift */; };
+		8A50629D2C81A68600EE48D4 /* NetworkServiceAsyncAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50629C2C81A68600EE48D4 /* NetworkServiceAsyncAwait.swift */; };
 		8A867E632C7C73D300E75AF9 /* RickAndMortyAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A867E622C7C73D300E75AF9 /* RickAndMortyAPIApp.swift */; };
 		8A867E652C7C73D300E75AF9 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A867E642C7C73D300E75AF9 /* CharactersView.swift */; };
 		8A867E672C7C73D500E75AF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A867E662C7C73D500E75AF9 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		8A2CCC072C7F00B500299CFD /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
 		8A2CCC092C7F045800299CFD /* CharacterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRow.swift; sourceTree = "<group>"; };
+		8A50629C2C81A68600EE48D4 /* NetworkServiceAsyncAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceAsyncAwait.swift; sourceTree = "<group>"; };
 		8A867E5F2C7C73D300E75AF9 /* RickAndMortyAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A867E622C7C73D300E75AF9 /* RickAndMortyAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyAPIApp.swift; sourceTree = "<group>"; };
 		8A867E642C7C73D300E75AF9 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				8A867E642C7C73D300E75AF9 /* CharactersView.swift */,
 				8A2CCC072C7F00B500299CFD /* CharactersViewModel.swift */,
 				8AFD19802C80AA1200A4CF3E /* NetworkServiceCombine.swift */,
+				8A50629C2C81A68600EE48D4 /* NetworkServiceAsyncAwait.swift */,
 				8AE2AA1E2C7DE20800993AAD /* Model */,
 				8A867E662C7C73D500E75AF9 /* Assets.xcassets */,
 				8A867E682C7C73D500E75AF9 /* Preview Content */,
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A50629D2C81A68600EE48D4 /* NetworkServiceAsyncAwait.swift in Sources */,
 				8AFD19812C80AA1200A4CF3E /* NetworkServiceCombine.swift in Sources */,
 				8AE2AA202C7DE21F00993AAD /* Character.swift in Sources */,
 				8A867E652C7C73D300E75AF9 /* CharactersView.swift in Sources */,

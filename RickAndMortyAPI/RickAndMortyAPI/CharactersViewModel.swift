@@ -50,4 +50,9 @@ final class CharactersViewModel: ObservableObject {
             }
             .store(in: &subscriptions)
     }
+
+    func fetchCharactersWithAsyncAwait() async {
+        characters.removeAll()
+        characters = await NetworkServiceAsyncAwait().fetchCharacters()
+    }
 }
