@@ -16,6 +16,7 @@
 		8A867E6A2C7C73D500E75AF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A867E692C7C73D500E75AF9 /* Preview Assets.xcassets */; };
 		8AE2AA202C7DE21F00993AAD /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE2AA1F2C7DE21F00993AAD /* Character.swift */; };
 		8AFD19812C80AA1200A4CF3E /* NetworkServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFD19802C80AA1200A4CF3E /* NetworkServiceCombine.swift */; };
+		8AFE44762C81B65A0018E70F /* NetworkServiceURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE44752C81B65A0018E70F /* NetworkServiceURLSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		8A867E692C7C73D500E75AF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8AE2AA1F2C7DE21F00993AAD /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		8AFD19802C80AA1200A4CF3E /* NetworkServiceCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceCombine.swift; sourceTree = "<group>"; };
+		8AFE44752C81B65A0018E70F /* NetworkServiceURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceURLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				8A2CCC072C7F00B500299CFD /* CharactersViewModel.swift */,
 				8AFD19802C80AA1200A4CF3E /* NetworkServiceCombine.swift */,
 				8A50629C2C81A68600EE48D4 /* NetworkServiceAsyncAwait.swift */,
+				8AFE44752C81B65A0018E70F /* NetworkServiceURLSession.swift */,
 				8AE2AA1E2C7DE20800993AAD /* Model */,
 				8A867E662C7C73D500E75AF9 /* Assets.xcassets */,
 				8A867E682C7C73D500E75AF9 /* Preview Content */,
@@ -166,6 +169,7 @@
 				8A867E652C7C73D300E75AF9 /* CharactersView.swift in Sources */,
 				8A867E632C7C73D300E75AF9 /* RickAndMortyAPIApp.swift in Sources */,
 				8A2CCC0A2C7F045800299CFD /* CharacterRow.swift in Sources */,
+				8AFE44762C81B65A0018E70F /* NetworkServiceURLSession.swift in Sources */,
 				8A2CCC082C7F00B500299CFD /* CharactersViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

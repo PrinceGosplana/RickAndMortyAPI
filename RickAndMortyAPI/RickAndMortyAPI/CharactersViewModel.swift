@@ -14,30 +14,20 @@ final class CharactersViewModel: ObservableObject {
 
     @Published var characters: [Character] = []
     var networkService = NetworkServiceCombine()
+    let networkURLService = NetworkServiceURLSession()
     var subscriptions = Set<AnyCancellable>()
 
     func fetchCharacters() {
-        guard let url = URL(string: "https://rickandmortyapi.com/api/character") else { return }
-        characters.append(Character(id: 1, name: "N", image: url))
-
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error {
-                print(error.localizedDescription)
-                return
-            }
-
-            guard let data else { return }
-
-            do {
-                let decoder = JSONDecoder()
-                let decodeData = try decoder.decode(CharacterResponse.self, from: data)
-                DispatchQueue.main.async {
-                    self.characters = decodeData.results
+        networkURLService.fetchCharacters { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let newCharacters):
+                    self.characters = newCharacters
+                case .failure:
+                    self.characters = []
                 }
-            } catch {
-                print(error.localizedDescription)
             }
-        }.resume()
+        }
     }
 
     func fetchCharactersWithCombine() {
