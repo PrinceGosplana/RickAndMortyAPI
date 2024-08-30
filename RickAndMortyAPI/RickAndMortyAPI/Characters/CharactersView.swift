@@ -19,9 +19,7 @@ struct CharactersView: View {
                 }
             }
             .task {
-                viewModel.fetchCharacters()
-//                viewModel.fetchCharactersWithCombine()
-//                await viewModel.fetchCharactersWithAsyncAwait()
+                viewModel.fetchCharacters(with: .asyncAwait)
             }
             .navigationTitle("Rick and Morty")
         }

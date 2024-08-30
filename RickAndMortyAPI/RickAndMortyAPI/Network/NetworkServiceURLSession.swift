@@ -13,6 +13,7 @@ final class NetworkServiceURLSession {
         guard let url = URL(string: "https://rickandmortyapi.com/api/character") else { return }
 
         URLSession.shared.dataTask(with: url) { data, response, error in
+            // I don't want to handle error, this is not the goal of this project
             if error != nil{
                 completion(.success([]))
             }
@@ -29,6 +30,7 @@ final class NetworkServiceURLSession {
                     completion(.success(decodeData.results))
                 }
             } catch {
+                // I don't want to handle error, this is not the goal of this project
                 completion(.success([]))
                 print(error.localizedDescription)
             }

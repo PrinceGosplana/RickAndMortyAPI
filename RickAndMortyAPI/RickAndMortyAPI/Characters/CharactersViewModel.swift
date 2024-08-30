@@ -8,6 +8,9 @@
 import Combine
 import SwiftUI
 
+enum FetchType {
+    case urlSession, combine, asyncAwait
+}
 
 @MainActor
 final class CharactersViewModel: ObservableObject {
@@ -17,7 +20,21 @@ final class CharactersViewModel: ObservableObject {
     let networkURLService = NetworkServiceURLSession()
     var subscriptions = Set<AnyCancellable>()
 
-    func fetchCharacters() {
+
+    func fetchCharacters(with type: FetchType) {
+        switch type {
+        case .urlSession:
+            fetchCharactersWithURLSession()
+        case .combine:
+            fetchCharactersWithCombine()
+        case .asyncAwait:
+            Task {
+                await fetchCharactersWithAsyncAwait()
+            }
+        }
+    }
+
+    private func fetchCharactersWithURLSession() {
         networkURLService.fetchCharacters { result in
             DispatchQueue.main.async {
                 switch result {
@@ -30,7 +47,7 @@ final class CharactersViewModel: ObservableObject {
         }
     }
 
-    func fetchCharactersWithCombine() {
+    private func fetchCharactersWithCombine() {
 
         characters.removeAll()
         
@@ -41,7 +58,7 @@ final class CharactersViewModel: ObservableObject {
             .store(in: &subscriptions)
     }
 
-    func fetchCharactersWithAsyncAwait() async {
+    private func fetchCharactersWithAsyncAwait() async {
         characters.removeAll()
         characters = await NetworkServiceAsyncAwait().fetchCharacters()
     }

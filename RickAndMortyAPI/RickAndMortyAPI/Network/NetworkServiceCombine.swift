@@ -18,6 +18,7 @@ final class NetworkServiceCombine {
             .map { $0.data }
             .decode(type: CharacterResponse.self, decoder: JSONDecoder())
             .receive(on: RunLoop.main)
+        // I don't want to handle error, this is not the goal of this project
             .replaceError(with: CharacterResponse.init(results: []))
             .eraseToAnyPublisher()
     }

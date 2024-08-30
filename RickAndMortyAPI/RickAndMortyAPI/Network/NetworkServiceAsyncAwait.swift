@@ -17,6 +17,7 @@ actor NetworkServiceAsyncAwait {
             let decodedData = try JSONDecoder().decode(CharacterResponse.self, from: data)
             return decodedData.results
         } catch {
+            // I don't want to handle error, this is not the goal of this project
             print(error.localizedDescription)
             return []
         }
